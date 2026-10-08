@@ -1,0 +1,1003 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SentinelRS — Cloud Threat Detection, Attack Graph & Autonomous Response</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ========================================================
+       PAGE 1: LANDING PAGE (Product Explanation & Features)
+       ======================================================== -->
+  <div id="page-landing" class="page-view landing-page active">
+    <!-- Landing Navigation -->
+    <header class="landing-nav">
+      <div class="brand-group">
+        <div class="sidebar-logo">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+            <path d="M12 8v4"/>
+            <path d="M12 16h.01"/>
+          </svg>
+        </div>
+        <div>
+          <div class="brand-name" style="font-size:1.25rem; font-weight:800; color:#064E3B;">SENTINEL<span style="color:var(--primary-green);">RS</span></div>
+          <div class="brand-sub" style="font-size:0.75rem; color:var(--text-muted);">Cloud Threat Detection & Response Platform</div>
+        </div>
+      </div>
+
+      <nav class="landing-nav-links">
+        <a href="#features">Key Features</a>
+        <a href="#architecture">How It Works</a>
+        <a href="#capabilities">SOC Capabilities</a>
+        <button class="btn-landing-primary" onclick="navigateToApp('dashboard')">
+          Launch SOC Dashboard
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M5 12h14M12 5l7 7-7 7"/>
+          </svg>
+        </button>
+      </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="landing-hero">
+      <div class="hero-pill-badge">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="12" cy="12" r="10"></circle>
+          <polyline points="12 6 12 12 14 14"></polyline>
+        </svg>
+        Next-Generation Cloud Detection and Response in Rust
+      </div>
+
+      <h1>
+        From Isolated Cloud Logs to <br/>
+        <span class="highlight">Correlated Attack Stories</span>
+      </h1>
+
+      <p class="hero-subtitle">
+        SentinelRS continuously ingests AWS telemetry, applies high-precision detection rules, reconstructs full lateral movement attack graphs with MITRE ATT&CK mapping, and executes autonomous, audit-chained containment actions.
+      </p>
+
+      <div class="hero-cta-group">
+        <button class="btn-landing-primary" onclick="navigateToApp('dashboard')">
+          Open Live SOC Platform
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M5 12h14M12 5l7 7-7 7"/>
+          </svg>
+        </button>
+        <button class="btn-landing-secondary" onclick="navigateToApp('simulation')">
+          Run Attack Simulation Lab
+        </button>
+      </div>
+
+      <!-- Quick Platform Stats -->
+      <div class="hero-stats-banner">
+        <div class="stat-box">
+          <div class="number">15+</div>
+          <div class="desc">Active Detection Rules</div>
+        </div>
+        <div class="stat-box">
+          <div class="number">&lt; 1ms</div>
+          <div class="desc">Evaluation Latency</div>
+        </div>
+        <div class="stat-box">
+          <div class="number">100%</div>
+          <div class="desc">Deterministic Scoring</div>
+        </div>
+        <div class="stat-box">
+          <div class="number">SHA-256</div>
+          <div class="desc">Cryptographic Audit Chain</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="landing-section">
+      <div class="section-header">
+        <div class="section-tag">Enterprise Capabilities</div>
+        <h2>Engineered for Modern Cloud Defense</h2>
+        <p>Comprehensive security telemetry correlation, proactive posture tracking, and deterministic automated response.</p>
+      </div>
+
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-icon-box">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+            </svg>
+          </div>
+          <h3>High-Fidelity Cloud Detections</h3>
+          <p>Real-time detection engine identifying IAM privilege escalation, S3 exfiltration patterns, credential abuse, and CloudTrail tampering in milliseconds.</p>
+          <div class="feature-badge-row">
+            <span class="feature-badge">IAM-001</span>
+            <span class="feature-badge">S3-002</span>
+            <span class="feature-badge">TRAIL-001</span>
+          </div>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon-box">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="18" cy="5" r="3"/>
+              <circle cx="6" cy="12" r="3"/>
+              <circle cx="18" cy="19" r="3"/>
+              <line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/>
+              <line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/>
+            </svg>
+          </div>
+          <h3>Dual-Layer Attack Graphs</h3>
+          <p>Reconstructs adversarial movement step-by-step using petgraph, linking compromised identities to critical crown-jewel storage and compute assets.</p>
+          <div class="feature-badge-row">
+            <span class="feature-badge">Lateral Movement</span>
+            <span class="feature-badge">Shortest Path</span>
+          </div>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon-box">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="2" y="3" width="20" height="14" rx="2" ry="2"/>
+              <line x1="8" y1="21" x2="16" y2="21"/>
+              <line x1="12" y1="17" x2="12" y2="21"/>
+            </svg>
+          </div>
+          <h3>MITRE ATT&CK Matrix Alignment</h3>
+          <p>Automatic categorization across Initial Access, Execution, Persistence, Privilege Escalation, Defense Evasion, and Exfiltration tactics.</p>
+          <div class="feature-badge-row">
+            <span class="feature-badge">T1078</span>
+            <span class="feature-badge">T1098</span>
+            <span class="feature-badge">T1530</span>
+          </div>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon-box">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M22 12h-4l-3 9L9 3l-3 9H2"/>
+            </svg>
+          </div>
+          <h3>Threat Intelligence & Posture (CSPM)</h3>
+          <p>Instant IP reputation caching and continuous AWS configuration scanning detecting open ingress, missing MFA, and unencrypted buckets.</p>
+          <div class="feature-badge-row">
+            <span class="feature-badge">GuardDuty</span>
+            <span class="feature-badge">IaC Drift</span>
+          </div>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon-box">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
+            </svg>
+          </div>
+          <h3>Autonomous & Gated Containment</h3>
+          <p>Dry-run simulation mode by default with cryptographic dual-approval checkpoints before executing live AWS IAM and network quarantines.</p>
+          <div class="feature-badge-row">
+            <span class="feature-badge">Dry-Run Safe</span>
+            <span class="feature-badge">Dual-Key Gate</span>
+          </div>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon-box">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+              <polyline points="14 2 14 8 20 8"/>
+              <line x1="16" y1="13" x2="8" y2="13"/>
+              <line x1="16" y1="17" x2="8" y2="17"/>
+            </svg>
+          </div>
+          <h3>SHA-256 Chained Audit Trail</h3>
+          <p>Cryptographically linked ledger guaranteeing tamper-proof non-repudiation for every analyst action, policy approval, and response event.</p>
+          <div class="feature-badge-row">
+            <span class="feature-badge">Immutable</span>
+            <span class="feature-badge">Hash Anchoring</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Architecture & Workflow Section -->
+    <section id="architecture" class="landing-section" style="background:#FFFFFF; border-top:1px solid var(--border-color); border-bottom:1px solid var(--border-color);">
+      <div class="section-header">
+        <div class="section-tag">Pipeline Workflow</div>
+        <h2>End-to-End Processing Architecture</h2>
+        <p>From cloud event ingestion to automated safe response execution.</p>
+      </div>
+
+      <div class="workflow-grid">
+        <div class="workflow-step">
+          <div class="step-number">1</div>
+          <h4>Ingestion & Parsing</h4>
+          <p>Continuous collection and normalization of AWS CloudTrail, GuardDuty findings, and threat intelligence streams.</p>
+        </div>
+
+        <div class="workflow-step">
+          <div class="step-number">2</div>
+          <h4>Detection Engine</h4>
+          <p>Zero-allocation rule evaluation evaluating behavioral anomalies and contextual privilege changes.</p>
+        </div>
+
+        <div class="workflow-step">
+          <div class="step-number">3</div>
+          <h4>Graph Correlation</h4>
+          <p>Causal link construction combining temporal sequences into explainable incident kill chains with risk scoring.</p>
+        </div>
+
+        <div class="workflow-step">
+          <div class="step-number">4</div>
+          <h4>Safe Containment</h4>
+          <p>Automated policy simulation and gated live remediation logged permanently into an immutable audit chain.</p>
+        </div>
+      </div>
+
+      <div style="text-align:center; margin-top:40px;">
+        <button class="btn-landing-primary" onclick="navigateToApp('dashboard')">
+          Access Live SOC Console
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M5 12h14M12 5l7 7-7 7"/>
+          </svg>
+        </button>
+      </div>
+    </section>
+
+    <!-- Landing Footer -->
+    <footer class="landing-footer">
+      <div class="footer-content">
+        <div style="text-align:left;">
+          <div style="font-weight:800; font-size:1.1rem; color:#FFFFFF;">SENTINELRS</div>
+          <div style="font-size:0.8rem; color:#A7F3D0; margin-top:4px;">Next-Generation Cloud Threat Detection & Attack Graph Platform</div>
+        </div>
+        <div style="font-size:0.85rem; color:#A7F3D0;">
+          Engineered in Rust with Axum, Tokio, and WebSockets.
+        </div>
+      </div>
+    </footer>
+  </div>
+
+
+  <!-- ========================================================
+       PAGE 2: PLATFORM APP (Taskbar on Left, Light Green Theme)
+       ======================================================== -->
+  <div id="page-app" class="page-view platform-container">
+    
+    <!-- LEFT TASKBAR / SIDEBAR -->
+    <aside class="taskbar-sidebar">
+      <div class="sidebar-header">
+        <div class="sidebar-brand">
+          <div class="sidebar-logo">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+              <path d="M12 8v4"/>
+              <path d="M12 16h.01"/>
+            </svg>
+          </div>
+          <div>
+            <div class="sidebar-title">SENTINEL<span style="color:#6EE7B7;">RS</span></div>
+            <div class="sidebar-sub">SOC Command Center</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="sidebar-section-title">Core Operations</div>
+      <nav class="taskbar-nav">
+        <button class="taskbar-btn active" onclick="switchTab('dashboard')">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <rect x="3" y="3" width="7" height="7"></rect>
+            <rect x="14" y="3" width="7" height="7"></rect>
+            <rect x="14" y="14" width="7" height="7"></rect>
+            <rect x="3" y="14" width="7" height="7"></rect>
+          </svg>
+          Live SOC Dashboard
+        </button>
+
+        <button class="taskbar-btn" onclick="switchTab('detections')">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+          </svg>
+          Detection Findings
+        </button>
+
+        <button class="taskbar-btn" onclick="switchTab('incidents')">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+            <polyline points="2 17 12 22 22 17"></polyline>
+            <polyline points="2 12 12 17 22 12"></polyline>
+          </svg>
+          Incident Investigation
+        </button>
+
+        <button class="taskbar-btn" onclick="switchTab('graph')">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="18" cy="5" r="3"></circle>
+            <circle cx="6" cy="12" r="3"></circle>
+            <circle cx="18" cy="19" r="3"></circle>
+            <line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line>
+            <line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line>
+          </svg>
+          Dual-Layer Graph
+        </button>
+
+        <button class="taskbar-btn" onclick="switchTab('explorer')">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="11" cy="11" r="8"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+          </svg>
+          Attack Path Explorer
+        </button>
+
+        <button class="taskbar-btn" onclick="switchTab('mitre')">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+            <line x1="8" y1="21" x2="16" y2="21"></line>
+            <line x1="12" y1="17" x2="12" y2="21"></line>
+          </svg>
+          MITRE ATT&CK Matrix
+        </button>
+
+        <div class="sidebar-section-title">Cloud Posture & Intel</div>
+
+        <button class="taskbar-btn" onclick="switchTab('guardduty')">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+          </svg>
+          GuardDuty Findings
+        </button>
+
+        <button class="taskbar-btn" onclick="switchTab('threatintel')">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="10"></circle>
+            <line x1="2" y1="12" x2="22" y2="12"></line>
+            <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+          </svg>
+          Threat Intelligence
+        </button>
+
+        <button class="taskbar-btn" onclick="switchTab('posture')">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M18 20V10M12 20V4M6 20v-6"/>
+          </svg>
+          Posture & Score (CSPM)
+        </button>
+
+        <button class="taskbar-btn" onclick="switchTab('drift')">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polygon points="12 2 22 8.5 22 15.5 12 22 2 15.5 2 8.5 12 2"></polygon>
+            <line x1="12" y1="22" x2="12" y2="15.5"></line>
+            <polyline points="22 8.5 12 15.5 2 8.5"></polyline>
+          </svg>
+          IaC Drift Detection
+        </button>
+
+        <button class="taskbar-btn" onclick="switchTab('assets')">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z"/>
+          </svg>
+          Cloud Asset Inventory
+        </button>
+
+        <div class="sidebar-section-title">Response & Governance</div>
+
+        <button class="taskbar-btn" onclick="switchTab('responses')">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
+          </svg>
+          Response Center
+        </button>
+
+        <button class="taskbar-btn" onclick="switchTab('audit')">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+            <polyline points="14 2 14 8 20 8"></polyline>
+            <line x1="16" y1="13" x2="8" y2="13"></line>
+            <line x1="16" y1="17" x2="8" y2="17"></line>
+          </svg>
+          Immutable Audit Trail
+        </button>
+
+        <button class="taskbar-btn hero-tab" onclick="switchTab('simulation')">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polygon points="5 3 19 12 5 21 5 3"/>
+          </svg>
+          Attack Simulation Lab
+        </button>
+      </nav>
+
+      <div class="sidebar-footer">
+        <button class="btn-back-landing" onclick="navigateToLanding()">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="19" y1="12" x2="5" y2="12"></line>
+            <polyline points="12 19 5 12 12 5"></polyline>
+          </svg>
+          Landing Page
+        </button>
+      </div>
+    </aside>
+
+    <!-- RIGHT MAIN CONTENT -->
+    <div class="platform-main">
+      <!-- Top Status Header -->
+      <header class="platform-top-bar">
+        <div class="top-bar-title">
+          <h2 id="active-tab-title">Live SOC Dashboard</h2>
+          <span class="top-bar-meta">Cloud Threat Detection, Attack Graph & Safe Response Platform</span>
+        </div>
+
+        <div class="nav-metrics">
+          <div class="status-pill live-pill" id="aws-conn-pill">
+            <span class="pulsing-dot" id="ws-dot"></span>
+            <span id="aws-status-text">AWS TELEMETRY: LIVE</span>
+          </div>
+          <div class="telemetry-pill">
+            <span class="label">ACCOUNT:</span> <span class="val mono">123456789012</span>
+          </div>
+          <div class="telemetry-pill">
+            <span class="label">REGION:</span> <span class="val">ap-south-1</span>
+          </div>
+          <div class="telemetry-pill" style="border-color: var(--primary-green);">
+            <span class="label">RESPONSE MODE:</span> <span class="val" id="top-response-mode">SIMULATION</span>
+          </div>
+        </div>
+      </header>
+
+      <!-- Main Body Content Views -->
+      <main class="main-body">
+        
+        <!-- TAB 1: Live SOC Dashboard -->
+        <section id="tab-dashboard" class="tab-pane active">
+          <!-- KPI Row -->
+          <div class="kpi-grid">
+            <div class="kpi-card danger">
+              <div class="kpi-title">ACTIVE INCIDENTS</div>
+              <div class="kpi-value" id="kpi-incidents">01</div>
+              <div class="kpi-meta"><span class="highlight-red">1 CRITICAL</span> • Dual Correlated</div>
+            </div>
+            <div class="kpi-card warning">
+              <div class="kpi-title">RISK SCORE</div>
+              <div class="kpi-value" id="kpi-risk">94<span class="unit">/100</span></div>
+              <div class="kpi-meta">+20 Threat Intel • +20 PrivEsc • +15 Tamper</div>
+            </div>
+            <div class="kpi-card info">
+              <div class="kpi-title">CSPM POSTURE SCORE</div>
+              <div class="kpi-value" id="kpi-posture-score">82<span class="unit">/100</span></div>
+              <div class="kpi-meta" id="kpi-posture-meta">3 Misconfigurations • 2 Drifted</div>
+            </div>
+            <div class="kpi-card success">
+              <div class="kpi-title">TOTAL EVENTS INGESTED</div>
+              <div class="kpi-value" id="kpi-events">7</div>
+              <div class="kpi-meta" id="kpi-rate">Throughput: <span class="mono">-- ev/s</span></div>
+            </div>
+          </div>
+
+          <!-- Dashboard Split View -->
+          <div class="dashboard-grid">
+            <!-- Left: Incident Attack Story & Timeline -->
+            <div class="glass-panel">
+              <div class="panel-header">
+                <h3>Active Incident Story: <span class="mono">SR-1042</span></h3>
+                <span class="badge badge-critical" id="incident-badge-status">CRITICAL RISK 94/100</span>
+              </div>
+              <div class="narrative-box">
+                <p class="narrative-summary" id="incident-story-summary">
+                  Multi-stage compromise detected targeting IAM identity <strong>attacker-demo</strong> from malicious IP <strong>198.51.100.42</strong> (Reputation 88/100 • C2 Staging). 
+                  Adversary escalated privileges to <em>AdministratorAccess</em>, accessed sensitive customer PII records in S3, and disabled CloudTrail logging.
+                </p>
+                
+                <h4 class="mt-1" style="font-size: 0.8rem; color: var(--text-muted); font-weight:700;">ATTACK PROGRESSION TIMELINE:</h4>
+                <div class="attack-timeline-vertical mt-1" id="dashboard-timeline">
+                  <!-- Timeline items rendered dynamically -->
+                </div>
+              </div>
+
+              <div class="panel-header mt-2">
+                <h3>Autonomous Containment Recommendations</h3>
+              </div>
+              <div class="containment-list" id="dashboard-containment-list">
+                <!-- Containment items rendered dynamically -->
+              </div>
+            </div>
+
+            <!-- Right: Live Cloud Telemetry Feed -->
+            <div class="glass-panel">
+              <div class="panel-header">
+                <div>
+                  <h3>Live Telemetry Stream</h3>
+                  <div class="panel-sub">Real-time normalized stream (<span id="visible-count">0</span> visible)</div>
+                </div>
+                <div class="stream-controls">
+                  <button class="btn btn-sm" id="btn-pause-stream" onclick="toggleStreamPause()">Pause</button>
+                  <button class="btn btn-sm" onclick="clearEventFeed()">Clear</button>
+                </div>
+              </div>
+
+              <div class="filter-bar">
+                <input type="text" id="filter-search" class="filter-input" placeholder="Filter action, actor, resource..." oninput="applyEventFilters()" />
+                <select id="filter-severity" class="filter-select" onchange="applyEventFilters()">
+                  <option value="">All Severities</option>
+                  <option value="critical">Critical</option>
+                  <option value="high">High</option>
+                  <option value="medium">Medium</option>
+                  <option value="low">Low</option>
+                </select>
+              </div>
+
+              <div class="event-stream-container">
+                <table class="event-table">
+                  <thead>
+                    <tr>
+                      <th>TIME</th>
+                      <th>ACTOR</th>
+                      <th>ACTION</th>
+                      <th>RESOURCE</th>
+                      <th>SEV</th>
+                    </tr>
+                  </thead>
+                  <tbody id="events-table-body">
+                    <!-- Injected dynamically -->
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- TAB: Detections Findings Feed -->
+        <section id="tab-detections" class="tab-pane">
+          <div class="glass-panel">
+            <div class="panel-header">
+              <div>
+                <h2>Real-Time Detection Findings Feed</h2>
+                <div class="panel-sub">High-fidelity rule triggers and behavioral anomalies with MITRE mappings</div>
+              </div>
+              <span class="badge badge-pulse" id="detection-count-badge">5 FINDINGS ACTIVE</span>
+            </div>
+
+            <div class="findings-grid mt-2" id="findings-cards-list">
+              <!-- Findings rendered dynamically -->
+            </div>
+          </div>
+        </section>
+
+        <!-- TAB: Incident Details & Evidence Investigation -->
+        <section id="tab-incidents" class="tab-pane">
+          <div class="glass-panel">
+            <div class="panel-header">
+              <div>
+                <h2>Incident Investigation: <span class="mono" id="inc-id-display">SR-1042</span></h2>
+                <div class="panel-sub">Multi-Stage Cloud Compromise Campaign</div>
+              </div>
+              <div style="display:flex; gap:10px;">
+                <button class="btn btn-sm" style="border-color: var(--danger); color: var(--danger);" onclick="markFalsePositive()">Mark False Positive</button>
+                <span class="badge badge-critical" id="inc-risk-badge">CRITICAL RISK 94/100</span>
+              </div>
+            </div>
+
+            <div class="incident-decomposition mt-2">
+              <h3 style="font-size:1rem; font-weight:700; color:#064E3B;">Explainable Risk Scoring Decomposition</h3>
+              <div class="risk-bar-wrapper">
+                <div class="risk-bar-fill" id="inc-risk-bar" style="width: 94%;">94 / 100 CRITICAL</div>
+              </div>
+              <div class="factors-grid" id="inc-factors-grid">
+                <!-- Risk factors populated dynamically -->
+              </div>
+            </div>
+
+            <div class="panel-header mt-2">
+              <h3>Forensic Supporting Evidence</h3>
+            </div>
+            <div class="evidence-list" id="inc-evidence-list">
+              <!-- Evidence items rendered dynamically -->
+            </div>
+          </div>
+        </section>
+
+        <!-- TAB: Dual-Layer Cloud Graph -->
+        <section id="tab-graph" class="tab-pane">
+          <div class="glass-panel full-height">
+            <div class="panel-header">
+              <div>
+                <h3>Dual-Layer Cloud Graph</h3>
+                <div class="panel-sub">Layer A: Cloud Infrastructure Topology • Layer B: Reconstructed Attacker Lateral Movement</div>
+              </div>
+              <div class="graph-actions" style="display:flex; gap:8px;">
+                <button class="btn btn-sm active" id="btn-layer-attack" onclick="switchGraphMode('attack')">Attack Path View</button>
+                <button class="btn btn-sm" id="btn-layer-infra" onclick="switchGraphMode('infra')">Infrastructure View</button>
+                <button class="btn btn-sm" onclick="renderGraph()">Reset Layout</button>
+              </div>
+            </div>
+            <div class="graph-canvas-container" id="graph-container">
+              <div class="attack-graph-diagram" id="graph-diagram-canvas">
+                <!-- Rendered dynamically -->
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- TAB: Attack Path Explorer -->
+        <section id="tab-explorer" class="tab-pane">
+          <div class="glass-panel">
+            <div class="panel-header">
+              <div>
+                <h2>Attack Path Explorer</h2>
+                <div class="panel-sub">Query shortest lateral movement paths from compromised identities to crown-jewel assets</div>
+              </div>
+            </div>
+
+            <div class="explorer-form-grid mt-2">
+              <div class="form-group">
+                <label style="font-size:0.8rem; font-weight:700; color:var(--text-secondary); display:block; margin-bottom:4px;">Source Identity / Node:</label>
+                <select id="path-source" class="filter-select" style="width:100%;">
+                  <option value="ip-198-51-100-42">198.51.100.42 (Attacker IP)</option>
+                  <option value="user-attacker-demo">attacker-demo (IAM User)</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label style="font-size:0.8rem; font-weight:700; color:var(--text-secondary); display:block; margin-bottom:4px;">Target Critical Asset:</label>
+                <select id="path-target" class="filter-select" style="width:100%;">
+                  <option value="s3-customer-pii-production">s3://sentinel-customer-pii-production (Critical)</option>
+                  <option value="role-admin-prod">AdministratorRole (IAM Role)</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label style="font-size:0.8rem; font-weight:700; color:var(--text-secondary); display:block; margin-bottom:4px;">Max Depth:</label>
+                <input type="number" id="path-depth" class="filter-input" value="6" min="1" max="10" />
+              </div>
+              <div class="form-group" style="display:flex; align-items:flex-end;">
+                <button class="btn btn-hero" onclick="executePathQuery()" style="width:100%;">Find Shortest Attack Path</button>
+              </div>
+            </div>
+
+            <div class="path-result-box mt-2" id="path-results-container">
+              <div class="panel-header">
+                <h4>Calculated Lateral Movement Path:</h4>
+                <span class="badge badge-critical" id="path-risk-badge">PATH RISK: 94/100</span>
+              </div>
+              <div class="killchain-steps mt-1" id="path-nodes-sequence">
+                <div class="step-badge done">198.51.100.42</div>
+                <div class="step-arrow">-> [AUTHENTICATED] -></div>
+                <div class="step-badge done critical-step">attacker-demo</div>
+                <div class="step-arrow">-> [CAN_ASSUME] -></div>
+                <div class="step-badge done critical-step">AdministratorRole</div>
+                <div class="step-arrow">-> [ACCESSES_DATA] -></div>
+                <div class="step-badge done critical-step">s3://sentinel-customer-pii-production</div>
+              </div>
+              <div class="mt-2" style="font-size: 0.85rem; color: var(--text-secondary);">
+                <strong>Justification:</strong> Direct privilege escalation vector allowing untrusted IP to gain root permissions on sensitive customer PII repository via STS role assumption.
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- TAB: MITRE Matrix -->
+        <section id="tab-mitre" class="tab-pane">
+          <div class="glass-panel">
+            <div class="panel-header">
+              <h3>MITRE ATT&CK Matrix for Cloud</h3>
+              <div class="panel-sub">Active observed techniques highlighted in real time</div>
+            </div>
+            <div class="mitre-matrix-grid" id="mitre-matrix-grid">
+              <!-- Populated dynamically -->
+            </div>
+          </div>
+        </section>
+
+        <!-- TAB: GuardDuty Findings -->
+        <section id="tab-guardduty" class="tab-pane">
+          <div class="glass-panel">
+            <div class="panel-header">
+              <div>
+                <h2>AWS GuardDuty Findings Ingestion</h2>
+                <div class="panel-sub">Normalized cloud security findings correlated directly with incident lifecycle & attack graphs</div>
+              </div>
+              <div style="display:flex; gap:10px;">
+                <button class="btn btn-sm btn-hero" onclick="ingestDemoGuardDuty()">Ingest GuardDuty Telemetry</button>
+                <span class="badge badge-pulse" id="guardduty-count-badge">3 FINDINGS MONITORED</span>
+              </div>
+            </div>
+
+            <div class="event-stream-container mt-2">
+              <table class="event-table">
+                <thead>
+                  <tr>
+                    <th>FINDING ID</th>
+                    <th>TITLE</th>
+                    <th>TYPE</th>
+                    <th>SEVERITY</th>
+                    <th>RESOURCE</th>
+                    <th>ACTOR IP</th>
+                    <th>REGION</th>
+                  </tr>
+                </thead>
+                <tbody id="guardduty-table-body">
+                  <!-- GuardDuty findings populated dynamically -->
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+
+        <!-- TAB: Threat Intelligence IP Enrichment -->
+        <section id="tab-threatintel" class="tab-pane">
+          <div class="glass-panel">
+            <div class="panel-header">
+              <div>
+                <h2>Threat Intelligence Indicator Enrichment</h2>
+                <div class="panel-sub">Suspicious IP reputation, C2 classification, confidence scoring, and local caching</div>
+              </div>
+              <span class="badge badge-pulse">ENRICHMENT ACTIVE</span>
+            </div>
+
+            <div class="explorer-form-grid mt-2">
+              <div class="form-group" style="grid-column: span 3;">
+                <label style="font-size:0.8rem; font-weight:700; color:var(--text-secondary); display:block; margin-bottom:4px;">Query IP Address for Threat Intelligence Context:</label>
+                <input type="text" id="ti-input-ip" class="filter-input" value="198.51.100.42" placeholder="e.g. 198.51.100.42" />
+              </div>
+              <div class="form-group" style="display:flex; align-items:flex-end;">
+                <button class="btn btn-hero" onclick="executeThreatIntelLookup()" style="width:100%;">Lookup IP</button>
+              </div>
+            </div>
+
+            <div class="mt-2" id="ti-result-panel">
+              <!-- Populated dynamically -->
+            </div>
+          </div>
+        </section>
+
+        <!-- TAB: Cloud Posture & Security Score -->
+        <section id="tab-posture" class="tab-pane">
+          <div class="glass-panel">
+            <div class="panel-header">
+              <div>
+                <h2>Cloud Security Posture Management (CSPM)</h2>
+                <div class="panel-sub">Deterministic misconfiguration detection across IAM, S3, EC2, Network, and CloudTrail</div>
+              </div>
+              <button class="btn btn-sm btn-hero" onclick="triggerPostureScan()">Rescan Posture</button>
+            </div>
+
+            <div class="kpi-grid mt-2" id="posture-kpi-grid">
+              <div class="kpi-card warning">
+                <div class="kpi-title">OVERALL POSTURE SCORE</div>
+                <div class="kpi-value" id="posture-score-val">82<span class="unit">/100</span></div>
+                <div class="kpi-meta">Rating: <strong style="color:var(--warning);">Moderate</strong></div>
+              </div>
+              <div class="kpi-card info">
+                <div class="kpi-title">IDENTITY SECURITY</div>
+                <div class="kpi-value" id="posture-cat-identity">72<span class="unit">%</span></div>
+                <div class="kpi-meta">MFA & Wildcard Checks</div>
+              </div>
+              <div class="kpi-card info">
+                <div class="kpi-title">STORAGE & S3</div>
+                <div class="kpi-value" id="posture-cat-storage">78<span class="unit">%</span></div>
+                <div class="kpi-meta">Encryption & Public Access</div>
+              </div>
+              <div class="kpi-card danger">
+                <div class="kpi-title">NETWORK INGRESS</div>
+                <div class="kpi-value" id="posture-cat-network">65<span class="unit">%</span></div>
+                <div class="kpi-meta">0.0.0.0/0 SSH Exposure</div>
+              </div>
+            </div>
+
+            <div class="panel-header mt-2">
+              <h3>Active Misconfiguration Findings</h3>
+            </div>
+            <div class="event-stream-container mt-1">
+              <table class="event-table">
+                <thead>
+                  <tr>
+                    <th>RULE ID</th>
+                    <th>TITLE</th>
+                    <th>CATEGORY</th>
+                    <th>SEVERITY</th>
+                    <th>RESOURCE</th>
+                    <th>STATUS</th>
+                    <th>REMEDIATION</th>
+                  </tr>
+                </thead>
+                <tbody id="posture-table-body">
+                  <!-- Populated dynamically -->
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+
+        <!-- TAB: Terraform / IaC Drift Detection -->
+        <section id="tab-drift" class="tab-pane">
+          <div class="glass-panel">
+            <div class="panel-header">
+              <div>
+                <h2>Terraform / IaC Drift Detection</h2>
+                <div class="panel-sub">Compares version-controlled Terraform state against live observed AWS infrastructure</div>
+              </div>
+              <button class="btn btn-sm btn-hero" onclick="triggerDriftEvaluation()">Evaluate IaC Drift</button>
+            </div>
+
+            <div class="event-stream-container mt-2">
+              <table class="event-table">
+                <thead>
+                  <tr>
+                    <th>RESOURCE ADDRESS</th>
+                    <th>TYPE</th>
+                    <th>DRIFT TYPE</th>
+                    <th>SEVERITY</th>
+                    <th>SECURITY IMPACT</th>
+                    <th>EXPECTED IAC vs OBSERVED</th>
+                  </tr>
+                </thead>
+                <tbody id="drift-table-body">
+                  <!-- Populated dynamically -->
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+
+        <!-- TAB: Cloud Asset Inventory -->
+        <section id="tab-assets" class="tab-pane">
+          <div class="glass-panel">
+            <div class="panel-header">
+              <div>
+                <h2>Cloud Asset Inventory</h2>
+                <div class="panel-sub">Discovered AWS resources, sensitivity tags, and criticality scores</div>
+              </div>
+              <span class="badge badge-pulse" id="assets-total-badge">7 ASSETS MONITORED</span>
+            </div>
+
+            <div class="event-stream-container mt-2">
+              <table class="event-table">
+                <thead>
+                  <tr>
+                    <th>ASSET NAME</th>
+                    <th>TYPE</th>
+                    <th>REGION</th>
+                    <th>SENSITIVITY</th>
+                    <th>CRITICALITY</th>
+                    <th>ARN</th>
+                  </tr>
+                </thead>
+                <tbody id="assets-table-body">
+                  <!-- Assets rendered dynamically -->
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+
+        <!-- TAB: Autonomous & Safe Response Center -->
+        <section id="tab-responses" class="tab-pane">
+          <div class="glass-panel">
+            <div class="panel-header">
+              <div>
+                <h2>Autonomous & Gated Response Center</h2>
+                <div class="panel-sub">Simulation mode (dry-run) is default. Live AWS actions require policy validation and dual independent approvals.</div>
+              </div>
+              <div class="badge badge-pulse" style="border-color:var(--primary-green);">DEFAULT: DRY-RUN SIMULATION</div>
+            </div>
+
+            <div id="responses-container" class="mt-2">
+              <!-- Response action cards rendered dynamically -->
+            </div>
+          </div>
+        </section>
+
+        <!-- TAB: Immutable Audit Trail -->
+        <section id="tab-audit" class="tab-pane">
+          <div class="glass-panel">
+            <div class="panel-header">
+              <div>
+                <h2>Immutable Response Audit Trail (SHA-256 Chained)</h2>
+                <div class="panel-sub">Cryptographically linked ledger verifying non-repudiation of every simulation, approval, and execution event</div>
+              </div>
+              <button class="btn btn-sm btn-hero" onclick="verifyAuditChain()">Verify Chain Integrity</button>
+            </div>
+
+            <div class="audit-verification-status mt-2" id="audit-verify-banner">
+              <span class="mono">CHAIN STATUS: VERIFIED INTACT (SHA-256 Cryptographic Continuity)</span>
+            </div>
+
+            <div class="event-stream-container mt-2">
+              <table class="event-table">
+                <thead>
+                  <tr>
+                    <th>SEQ</th>
+                    <th>TIMESTAMP</th>
+                    <th>INCIDENT</th>
+                    <th>ACTOR</th>
+                    <th>ACTION</th>
+                    <th>MODE</th>
+                    <th>STATE TRANSITION</th>
+                    <th>CURRENT HASH</th>
+                  </tr>
+                </thead>
+                <tbody id="audit-table-body">
+                  <!-- Audit records populated dynamically -->
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+
+        <!-- TAB: Attack Simulation Lab -->
+        <section id="tab-simulation" class="tab-pane">
+          <div class="glass-panel">
+            <div class="panel-header">
+              <div>
+                <h2>Attack Simulation Lab</h2>
+                <div class="panel-sub">Execute authentic multi-stage attack scenarios across detection, behavioral baselines, correlation, threat intel, and risk engines</div>
+              </div>
+            </div>
+
+            <div class="simulation-cards">
+              <div class="sim-card">
+                <div class="sim-title">Full Multi-Stage Attack</div>
+                <p class="sim-desc">Simulates end-to-end compromise: Initial Access -> PrivEsc -> Persistence -> S3 Exfil -> CloudTrail Tampering.</p>
+                <button class="btn btn-hero" onclick="runSimulation('Full Multi-Stage Attack')">Launch Scenario</button>
+              </div>
+              <div class="sim-card">
+                <div class="sim-title">IAM Privilege Escalation</div>
+                <p class="sim-desc">Simulates unauthorized attachment of AdministratorAccess policy to an IAM principal.</p>
+                <button class="btn" onclick="runSimulation('privilege_escalation')">Launch Scenario</button>
+              </div>
+              <div class="sim-card">
+                <div class="sim-title">S3 Data Exfiltration</div>
+                <p class="sim-desc">Simulates bulk downloading of sensitive financial CSV and Parquet records from S3.</p>
+                <button class="btn" onclick="runSimulation('s3_exfiltration')">Launch Scenario</button>
+              </div>
+              <div class="sim-card">
+                <div class="sim-title">CloudTrail Tampering</div>
+                <p class="sim-desc">Simulates adversaries disabling logging and attempting trail deletion.</p>
+                <button class="btn" onclick="runSimulation('cloudtrail_tampering')">Launch Scenario</button>
+              </div>
+            </div>
+
+            <div id="simulation-output" class="console-box mt-2">
+              <div class="console-title">Backend Pipeline Telemetry Log:</div>
+              <pre id="console-logs">[Ready] Select any scenario above to execute the Rust detection & correlation pipeline...</pre>
+            </div>
+          </div>
+        </section>
+
+      </main>
+    </div>
+
+    <!-- RIGHT SLIDE-OUT INVESTIGATION DRAWER -->
+    <div id="event-drawer" class="event-drawer">
+      <div class="drawer-header">
+        <div>
+          <h3 id="drawer-title" style="font-size:1.1rem; color:#064E3B; font-weight:700;">Event Details</h3>
+          <div class="panel-sub mono" id="drawer-id">--</div>
+        </div>
+        <button class="btn btn-sm" onclick="closeDrawer()">Close</button>
+      </div>
+      <div class="drawer-body">
+        <div class="drawer-section">
+          <h4 style="font-size:0.85rem; font-weight:700; color:var(--text-secondary); text-transform:uppercase;">Normalized Metadata</h4>
+          <div class="drawer-grid" id="drawer-meta-grid">
+            <!-- Populated dynamically -->
+          </div>
+        </div>
+
+        <div class="drawer-section mt-2">
+          <h4 style="font-size:0.85rem; font-weight:700; color:var(--text-secondary); text-transform:uppercase;">Raw CloudTrail JSON</h4>
+          <pre class="raw-json-box" id="drawer-raw-json">{}</pre>
+        </div>
+
+        <div class="drawer-section mt-2">
+          <h4 style="font-size:0.85rem; font-weight:700; color:var(--text-secondary); text-transform:uppercase;">Detection Findings</h4>
+          <div class="detection-status-box" id="drawer-detection-status" style="margin-top:8px;">
+            <span class="badge badge-critical">Rule IAM-001 Triggered</span>
+            <p class="sub mt-1" style="font-size:0.85rem; color:var(--text-secondary);">AdministratorAccess policy attached outside CI/CD pipeline.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

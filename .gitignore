@@ -1,0 +1,52 @@
+# Build & Compilation Artifacts
+target/
+**/*.rs.bk
+*.pdb
+*.exe
+*.dll
+*.so
+*.dylib
+
+# Environment & Credentials
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.cert
+*.crt
+credentials
+credentials.json
+
+# IDEs & OS Files
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Documentation & Markdown Files
+docs/
+*.md
+!README.md
+
+# Logs & Temporary Files
+*.log
+logs/
+tmp/
+temp/
+.cache/
+.system_generated/
+scratch/
+
+# Database Files
+*.sqlite
+*.sqlite3
+*.db
+postgres_data/
+
+# Docker Local Overrides
+docker-compose.override.yml

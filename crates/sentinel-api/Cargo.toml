@@ -1,0 +1,29 @@
+[package]
+name = "sentinel-api"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+
+[dependencies]
+sentinel-core.workspace = true
+sentinel-ingest.workspace = true
+sentinel-normalizer.workspace = true
+sentinel-detection.workspace = true
+sentinel-correlation.workspace = true
+sentinel-risk.workspace = true
+sentinel-mitre.workspace = true
+sentinel-response.workspace = true
+sentinel-storage.workspace = true
+
+tokio.workspace = true
+axum.workspace = true
+tower.workspace = true
+tower-http.workspace = true
+futures-util = "0.3"
+serde.workspace = true
+serde_json.workspace = true
+uuid.workspace = true
+chrono.workspace = true
+tracing.workspace = true
+dashmap.workspace = true
+parking_lot.workspace = true

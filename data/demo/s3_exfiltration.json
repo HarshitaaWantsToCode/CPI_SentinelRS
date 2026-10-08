@@ -1,0 +1,26 @@
+{
+  "Records": [
+    {
+      "eventVersion": "1.08",
+      "userIdentity": {
+        "type": "Role",
+        "principalId": "AROALAMBDASYNC01",
+        "arn": "arn:aws:iam::123456789012:role/lambda-data-sync",
+        "accountId": "123456789012",
+        "userName": "lambda-data-sync"
+      },
+      "eventTime": "2026-10-07T09:20:00Z",
+      "eventSource": "s3.amazonaws.com",
+      "eventName": "GetObject",
+      "awsRegion": "ap-south-1",
+      "sourceIPAddress": "198.51.100.99",
+      "userAgent": "python-requests/2.31.0",
+      "requestParameters": {
+        "bucketName": "sentinel-financial-exports",
+        "key": "2026_q1_confidential.parquet"
+      },
+      "responseElements": null,
+      "additionalEventData": { "bytesTransferred": 524288000 }
+    }
+  ]
+}

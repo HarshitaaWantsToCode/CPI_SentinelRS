@@ -1,0 +1,40 @@
+{
+  "Records": [
+    {
+      "eventVersion": "1.08",
+      "userIdentity": {
+        "type": "IAMUser",
+        "principalId": "AIDAEXAMPLEUSER01",
+        "arn": "arn:aws:iam::123456789012:user/engineer-alice",
+        "accountId": "123456789012",
+        "userName": "engineer-alice"
+      },
+      "eventTime": "2026-10-07T08:00:00Z",
+      "eventSource": "s3.amazonaws.com",
+      "eventName": "ListBuckets",
+      "awsRegion": "ap-south-1",
+      "sourceIPAddress": "10.0.1.45",
+      "userAgent": "aws-sdk-rust/1.0",
+      "requestParameters": {},
+      "responseElements": null
+    },
+    {
+      "eventVersion": "1.08",
+      "userIdentity": {
+        "type": "IAMUser",
+        "principalId": "AIDAEXAMPLEUSER01",
+        "arn": "arn:aws:iam::123456789012:user/engineer-alice",
+        "accountId": "123456789012",
+        "userName": "engineer-alice"
+      },
+      "eventTime": "2026-10-07T08:05:00Z",
+      "eventSource": "ec2.amazonaws.com",
+      "eventName": "DescribeInstances",
+      "awsRegion": "ap-south-1",
+      "sourceIPAddress": "10.0.1.45",
+      "userAgent": "aws-sdk-rust/1.0",
+      "requestParameters": {},
+      "responseElements": null
+    }
+  ]
+}

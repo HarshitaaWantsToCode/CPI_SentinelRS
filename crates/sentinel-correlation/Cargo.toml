@@ -1,0 +1,17 @@
+[package]
+name = "sentinel-correlation"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+
+[dependencies]
+sentinel-core.workspace = true
+sentinel-risk.workspace = true
+sentinel-detection.workspace = true
+petgraph.workspace = true
+serde.workspace = true
+serde_json.workspace = true
+chrono.workspace = true
+uuid.workspace = true
+tracing.workspace = true
+dashmap.workspace = true

@@ -1,0 +1,23 @@
+[package]
+name = "sentinel-server"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+
+[dependencies]
+sentinel-core.workspace = true
+sentinel-detection.workspace = true
+sentinel-correlation.workspace = true
+sentinel-response.workspace = true
+sentinel-storage.workspace = true
+sentinel-api.workspace = true
+sentinel-ingest.workspace = true
+sentinel-normalizer.workspace = true
+
+tokio.workspace = true
+axum.workspace = true
+tracing.workspace = true
+tracing-subscriber.workspace = true
+anyhow.workspace = true
+dashmap.workspace = true
+parking_lot.workspace = true

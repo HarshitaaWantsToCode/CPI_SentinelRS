@@ -1,0 +1,25 @@
+{
+  "Records": [
+    {
+      "eventVersion": "1.08",
+      "userIdentity": {
+        "type": "IAMUser",
+        "principalId": "AIDACONTRACTOR01",
+        "arn": "arn:aws:iam::123456789012:user/contractor-bob",
+        "accountId": "123456789012",
+        "userName": "contractor-bob"
+      },
+      "eventTime": "2026-10-07T09:15:00Z",
+      "eventSource": "iam.amazonaws.com",
+      "eventName": "AttachUserPolicy",
+      "awsRegion": "us-east-1",
+      "sourceIPAddress": "192.0.2.55",
+      "userAgent": "aws-cli/2.15.0",
+      "requestParameters": {
+        "userName": "contractor-bob",
+        "policyArn": "arn:aws:iam::aws:policy/AdministratorAccess"
+      },
+      "responseElements": null
+    }
+  ]
+}
